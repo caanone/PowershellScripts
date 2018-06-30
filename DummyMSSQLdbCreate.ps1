@@ -33,8 +33,8 @@ GO "
 
 
 
-Invoke-SQLcmd -ServerInstance $dninstance -query $createquery -U $dbuser -P $dbpassword -Database "MASTER"
-Invoke-SQLcmd -ServerInstance $dninstance -query $tablecreatequery -U $dbuser -P $dbpassword -Database $dbname
+Invoke-SQLcmd -ServerInstance $dninstance -query $createquery -Username $dbuser -Password $dbpassword -Database "MASTER"
+Invoke-SQLcmd -ServerInstance $dninstance -query $tablecreatequery -Username $dbuser -Password $dbpassword -Database $dbname
 
 
 For ($i=0; $i -lt $insertcount; $i++) {
@@ -57,7 +57,7 @@ For ($i=0; $i -lt $insertcount; $i++) {
 
 
 For ($i=0; $i -lt $duprow; $i++) {
-Invoke-SQLcmd -ServerInstance $dninstance -query $insertquery -U $dbuser -P $dbpassword -Database $dbname 
+Invoke-SQLcmd -ServerInstance $dninstance -query $insertquery -Username $dbuser -Password $dbpassword -Database $dbname 
 }
 
 
